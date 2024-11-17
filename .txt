@@ -1,0 +1,48 @@
+CREATE TABLE Helados(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  Sabor VARCHAR (50) NOT NULL,
+  Tipo VARCHAR (50) NOT NULL,
+  Precio DECIMAL (65) NOT NULL
+  );
+
+
+SHOW TABLES;
+
+DESCRIBE Helados;
+
+
+INSERT INTO Helados (Sabor, Tipo, Precio)
+VALUES ('Vainilla', 'Cono', '2000'),
+	   ('Chocolate', 'Galleta', '2500'),
+       ('Fresa', 'Vaso', '1500'),
+       ('Mango', 'Galleta', '1000'),
+       ('Coco','Cono','500'),
+       ('Cafe','Vaso','1800'),
+       ('Oreo','Cono','2000'),
+       ('Dulce de Leche','Vaso','3000'),
+       ('Avellana','Galleta','2000'),
+       ('Platano','Cono','1000'),
+       ('Caramelo','Vaso','2500'),
+       ('Uva','Cono','900'),
+       ('Tutti Frutti','Galleta','2500'),
+       ('Arandano','Vaso','1000'),
+       ('Piña Colada','Galleta','2000'),
+       ('Limon','Cono','3000'),
+       ('Frambuesa','Vaso','1000'),
+       ('Menta','Galleta','2000'),
+       ('Zarzamora','Vaso','1500'), 
+       ('Nuez','Cono','2000'); 
+
+
+
+       SELECT AVG(Precio) AS promedio_precio
+       FROM Helados;
+
+
+
+       SELECT * FROM Helados;
+
+
+       SELECT tipo, COUNT(id) AS cantidad, SUM(precio) AS total_precio
+       FROM Helados
+       GROUP BY tipo;
